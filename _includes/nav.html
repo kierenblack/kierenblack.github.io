@@ -1,6 +1,6 @@
 <nav>
     <ul>
-        
+        <li><a href="/">Home</a></li>
         {% for page in site.pages %} {% if page.title and page.title != 'Kieren Black' %}
         <li><a href="{{ page.url | prepend: site.baseurl }}">{%- if page.nav -%}
             {{ page.nav }}
