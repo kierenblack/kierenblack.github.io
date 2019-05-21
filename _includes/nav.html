@@ -1,10 +1,11 @@
 <nav>
     <ul>
-        {% for page in site.pages %} {% if page.title %}
+        
+        {% for page in site.pages %} {% if page.title and page.title != 'Kieren Black' %}
         <li><a href="{{ page.url | prepend: site.baseurl }}">{%- if page.nav -%}
-            {{page.nav }}
+            {{ page.nav }}
             {%- else -%}
-            {{page.title}}
+            {{ page.title}}
         {%- endif -%}</a></li>
         {% endif %} {% endfor %}
     </ul>
