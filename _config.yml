@@ -1,2 +1,14 @@
 name: Kieren Black
+# Site Settings
+title: Start Jekyll
+email: dunnersguy@gmail.com
+description: >
+  A guide to getting started with Jekyll.
+baseurl: "/"
+url: "http://kierenblack.github.io"
+twitter_username: kezzab25
+github_username:  kezzab25
+# Build Settings
+include: ['_pages']
+
 markdown: kramdown
