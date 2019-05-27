@@ -1,12 +1,16 @@
 <nav>
     <ul>
-        <li><a href="/">Home</a></li>
+        {% assign current = page.url | downcase | split: '/' %}
+        <li><a href="/" {% if page.nav == "Home" %} class="active" {% endif %}>Home</a></li>
+
         {% for page in site.pages %} {% if page.title and page.title != 'Kieren Black' %}
-        <li><a href="{{ page.url | prepend: site.baseurl }}">{%- if page.nav -%}
-            {{ page.nav }}
-            {%- else -%}
-            {{ page.title}}
-        {%- endif -%}</a></li>
+        {% assign curpage = page.url | downcase | split: '/' %}
+        <li><a href="{{ page.url | prepend: site.baseurl }}" {% if current[1]==curpage[1] %} class="active" {% endif %}>{%-
+                if page.nav -%}
+                {{ page.nav }}
+                {%- else -%}
+                {{ page.title}}
+                {%- endif -%}</a></li>
         {% endif %} {% endfor %}
     </ul>
 </nav>
